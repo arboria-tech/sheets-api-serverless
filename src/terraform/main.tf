@@ -37,7 +37,7 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution" {
 # Cria a Lambda Layer
 resource "aws_lambda_layer_version" "google_sheets_layer" {
   filename            = "./deployments/google_sheets_layer.zip"
-  layer_name          = "extract-layer"
+  layer_name          = "google-sheets-layer"
   compatible_runtimes = ["python3.11"]
   source_code_hash    = filebase64sha256("./deployments/google_sheets_layer.zip")
 }
